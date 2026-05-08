@@ -1,3 +1,0 @@
-Target Discovery,2
-Target Infiltration,3
-Success,4

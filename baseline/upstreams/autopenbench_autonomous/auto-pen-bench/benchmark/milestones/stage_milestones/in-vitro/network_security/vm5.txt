@@ -1,4 +1,0 @@
-Identification,1
-Exploit Development,2
-Exploit Execution,3
-Success,4

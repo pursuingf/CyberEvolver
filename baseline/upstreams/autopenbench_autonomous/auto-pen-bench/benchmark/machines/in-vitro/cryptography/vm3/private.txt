@@ -1,2 +1,0 @@
-privA: 210
-privB: 416
