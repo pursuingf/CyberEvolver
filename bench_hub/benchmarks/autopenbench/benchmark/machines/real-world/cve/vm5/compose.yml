@@ -1,0 +1,12 @@
+services:
+  real-world_cve_vm5:
+    build: .
+    image: real-world_cve_vm5
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    command: bash -c "tail -f /dev/null"
+    restart: unless-stopped
+networks:
+  net-main_network: {}

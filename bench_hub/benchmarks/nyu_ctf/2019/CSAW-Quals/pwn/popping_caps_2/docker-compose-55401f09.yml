@@ -1,0 +1,18 @@
+services:
+  game-server-latest-22abb9d0f7-ac956694d82c15c24121:
+    image: llmctf/2019q-pwn-popping_caps_2:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-22abb9d0f7-ac956694d82c15c24121:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 17822:8000
+    container_name: game-server-latest-22abb9d0f7-ac956694d82c15c24121
+    restart: always
+networks:
+  ctfnet-latest-22abb9d0f7-ac956694d82c15c24121:
+    name: ctfnet-latest-22abb9d0f7-ac956694d82c15c24121
+    external: true
+    driver: bridge

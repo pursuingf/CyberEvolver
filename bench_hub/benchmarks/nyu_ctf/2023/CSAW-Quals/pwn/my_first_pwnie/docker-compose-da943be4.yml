@@ -1,0 +1,18 @@
+services:
+  game-server-latest-3a23a9e7d5-a45181ebd9a5861d10c2:
+    image: llmctf/2023q-pwn-my_first_pwnie:latest
+    ports:
+    - 17528:31137
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-3a23a9e7d5-a45181ebd9a5861d10c2:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: game-server-latest-3a23a9e7d5-a45181ebd9a5861d10c2
+    restart: always
+networks:
+  ctfnet-latest-3a23a9e7d5-a45181ebd9a5861d10c2:
+    name: ctfnet-latest-3a23a9e7d5-a45181ebd9a5861d10c2
+    external: true
+    driver: bridge

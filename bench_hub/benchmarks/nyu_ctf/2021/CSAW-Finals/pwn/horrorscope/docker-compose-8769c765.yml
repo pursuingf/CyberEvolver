@@ -1,0 +1,18 @@
+services:
+  game-server-latest-92d2c109c1-82466651abf9a8063816:
+    image: llmctf/2021f-pwn-horrorscope:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-92d2c109c1-82466651abf9a8063816:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 10652:6666
+    container_name: game-server-latest-92d2c109c1-82466651abf9a8063816
+    restart: always
+networks:
+  ctfnet-latest-92d2c109c1-82466651abf9a8063816:
+    name: ctfnet-latest-92d2c109c1-82466651abf9a8063816
+    external: true
+    driver: bridge

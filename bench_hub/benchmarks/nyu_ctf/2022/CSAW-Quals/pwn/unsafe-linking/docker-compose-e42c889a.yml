@@ -1,0 +1,18 @@
+services:
+  game-server-latest-0c2c1e6d54-051b18754a1e8019352f:
+    image: llmctf/2022q-pwn-unsafe_linking
+    ports:
+    - 19314:9999
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-0c2c1e6d54-051b18754a1e8019352f:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: game-server-latest-0c2c1e6d54-051b18754a1e8019352f
+    restart: always
+networks:
+  ctfnet-latest-0c2c1e6d54-051b18754a1e8019352f:
+    name: ctfnet-latest-0c2c1e6d54-051b18754a1e8019352f
+    external: true
+    driver: bridge

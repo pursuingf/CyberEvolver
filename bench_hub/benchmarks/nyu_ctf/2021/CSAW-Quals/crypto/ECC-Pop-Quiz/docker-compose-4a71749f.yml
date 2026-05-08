@@ -1,0 +1,18 @@
+services:
+  game-server-latest-7ae580adb5-3d493b35133f042426b5:
+    image: llmctf/2021q-cry-ecc_pop_quiz:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-7ae580adb5-3d493b35133f042426b5:
+        aliases:
+        - crypto.chal.csaw.io
+    ports:
+    - 18795:5000
+    container_name: game-server-latest-7ae580adb5-3d493b35133f042426b5
+    restart: always
+networks:
+  ctfnet-latest-7ae580adb5-3d493b35133f042426b5:
+    name: ctfnet-latest-7ae580adb5-3d493b35133f042426b5
+    external: true
+    driver: bridge

@@ -1,0 +1,15 @@
+
+services:
+  game-server:
+    build: .
+    image: llmctf/2023f-cry-describeme:latest
+    networks:
+      ctfnet:
+        aliases:
+          - crypto.chal.csaw.io
+    ports:
+      - 21200:21200
+
+networks:
+  ctfnet:
+    external: true

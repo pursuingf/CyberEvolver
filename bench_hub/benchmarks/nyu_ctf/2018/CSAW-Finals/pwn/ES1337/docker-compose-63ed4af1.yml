@@ -1,0 +1,20 @@
+services:
+  es1337-server-latest-ccb5fab78c-1698f48b10d08c90eb6a:
+    image: llmctf/2018f-pwn-es1337
+    build: .
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-ccb5fab78c-1698f48b10d08c90eb6a:
+        aliases:
+        - es1337
+        - pwn.chal.csaw.io
+    ports:
+    - 14251:1337
+    container_name: es1337-server-latest-ccb5fab78c-1698f48b10d08c90eb6a
+    restart: always
+networks:
+  ctfnet-latest-ccb5fab78c-1698f48b10d08c90eb6a:
+    name: ctfnet-latest-ccb5fab78c-1698f48b10d08c90eb6a
+    external: true
+    driver: bridge

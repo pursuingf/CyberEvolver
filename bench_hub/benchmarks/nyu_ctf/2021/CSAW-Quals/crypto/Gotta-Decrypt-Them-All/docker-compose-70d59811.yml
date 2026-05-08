@@ -1,0 +1,18 @@
+services:
+  game-server-latest-eb6d94e5d0-bd67baeb9141631276e1:
+    image: llmctf/2021q-cry-gotta_decrypt_them_all:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-eb6d94e5d0-bd67baeb9141631276e1:
+        aliases:
+        - crypto.chal.csaw.io
+    ports:
+    - 17590:5000
+    container_name: game-server-latest-eb6d94e5d0-bd67baeb9141631276e1
+    restart: always
+networks:
+  ctfnet-latest-eb6d94e5d0-bd67baeb9141631276e1:
+    name: ctfnet-latest-eb6d94e5d0-bd67baeb9141631276e1
+    external: true
+    driver: bridge

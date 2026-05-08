@@ -1,0 +1,13 @@
+services:
+  cookie-injection:
+    build: .
+    image: llmctf/2023q-web-cookie_injection
+    networks:
+      ctfnet:
+        aliases:
+          - web.chal.csaw.io
+    ports:
+      - 5800:5800
+networks:
+  ctfnet:
+    external: true

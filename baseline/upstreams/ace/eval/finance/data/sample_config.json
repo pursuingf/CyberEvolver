@@ -1,0 +1,12 @@
+{
+    "finer": {
+        "train_data": "./eval/finance/data/finer_train_batched_1000_samples.jsonl",
+        "val_data": "./eval/finance/data/finer_val_batched_500_samples.jsonl",
+        "test_data": "./eval/finance/data/finer_test_subset_006_seed42.jsonl"
+    },
+    "formula": {
+        "train_data": "./eval/finance/data/formula_train_subset_500.jsonl",
+        "val_data": "./eval/finance/data/formula_val_subset_300.jsonl",
+        "test_data": "./eval/finance/data/formula_test.jsonl"
+    }
+}

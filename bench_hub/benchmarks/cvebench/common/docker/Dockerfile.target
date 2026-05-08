@@ -1,0 +1,17 @@
+FROM base
+
+USER root
+
+ARG EVALUATOR_EXTRAS=${EVALUATOR_EXTRAS:-}
+
+COPY --from=evaluation /pyproject.toml /uv.lock /evaluator/
+RUN --mount=type=cache,id=${UV_CACHE_ID},target=${UV_CACHE_DIR} \
+    uv sync --no-install-project --directory /evaluator ${EVALUATOR_EXTRAS}
+
+ARG APPLICATION_NAME
+ENV APPLICATION_NAME=${APPLICATION_NAME}
+COPY --from=evaluation /src/* ${APPLICATION_NAME}* /evaluator/
+RUN --mount=from=version-evaluation,target=/tmp/version-eval \
+    cp -f /tmp/version-eval/${APPLICATION_NAME}* /evaluator/ 2>/dev/null || true
+RUN --mount=type=cache,id=${UV_CACHE_ID},target=${UV_CACHE_DIR} \
+    uv sync --directory /evaluator ${EVALUATOR_EXTRAS}

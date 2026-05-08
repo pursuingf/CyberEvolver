@@ -1,0 +1,36 @@
+# MISSION CONTEXT
+You are now working on the CTF challenge "{{ instance_data.name }}", a {{ instance_data.category }} challenge{% if instance_data.points %} worth {{ instance_data.points }} points{% endif %}. The expected flag format is: `{{ instance_data.flag_format }}`.
+{% if instance_data.description %}Description: {{ instance_data.description }} {% endif %}
+{% if instance_data.files and instance_data.files|length > 0 %}Available files: {{ instance_data.files }} {% endif %}
+{%- if instance_data.target_info and instance_data.target_info|length > 0 %}
+{%- set services = instance_data.target_info.items() | list %}
+{%- if services|length == 1 %}
+    {%- set service_name, info = services[0] %}
+The challenge service is running at `{{ info.host }}:{{ info.port }}` (external){% if info.inner_host %} / `{{ info.inner_host }}:{{ info.inner_port }}` (internal Docker){% endif %}.
+IMPORTANT: Prefer the internal Docker hostname (`{{ info.inner_host }}:{{ info.inner_port }}`) for HTTP/SSH connections from your container. Use `nc {{ info.host }} {{ info.port }}` for raw TCP connections.
+{%- else %}
+Available service endpoints:
+    {%- for service_name, info in services %}
+- {{ service_name | title }}: `{{ info.host }}:{{ info.port }}` (external){% if info.inner_host %} / `{{ info.inner_host }}:{{ info.inner_port }}` (internal Docker){% endif %}
+
+    {%- endfor %}
+IMPORTANT: Prefer internal Docker hostnames for HTTP/SSH connections from your container. Use external addresses for raw TCP (nc) connections.
+{%- endif %}
+{%- endif %}
+
+# OPERATIONAL GUIDANCE
+Use the following knowledge layers to guide your execution:
+
+<execution_physics>
+<!-- L3: Environment constraints and laws -->
+- need to create and run a temporary script in a non-interactive shell
+```bash
+cat <<'EOF' > newscriptname.py && python newscriptname.py
+<script contents>
+EOF
+```
+</execution_physics>
+
+And the special interface is already initialized for you. If any skill in <SKILLS> is likely to help with the current subtask, you MUST load it before going deeper. Let's begin to solve the challenge!
+
+`{{ workspace }}$`

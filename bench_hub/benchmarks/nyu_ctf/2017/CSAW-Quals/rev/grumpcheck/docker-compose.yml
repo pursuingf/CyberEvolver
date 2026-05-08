@@ -1,0 +1,12 @@
+services:
+  grumpcheck:
+    image: llmctf/2017q-rev-grumpcheck
+    networks:
+      ctfnet:
+        aliases:
+          - rev.chal.csaw.io
+    ports:
+      - 7890:7890
+networks:
+  ctfnet:
+    external: true

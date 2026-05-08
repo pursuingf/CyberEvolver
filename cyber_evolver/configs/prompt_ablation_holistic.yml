@@ -1,0 +1,37 @@
+
+user_prompt_coderefiner_holistic: |
+  Now produce the evolution as a single mutation.
+
+  # Holistic Evolution Mandate
+  You see the full evidence (Mutation Evidence, Performance Comparison, Current State). Decide for yourself what to change. You have one LLM call — emit all your patches in this one response.
+
+  ## What you may modify
+  You MAY edit any subset of the following files. Edit as few or as many as you judge necessary.
+
+  - `system_template.txt`
+  - `instance_template.txt`
+  - `agent.py`
+  - `observation_template.txt`
+  - `output_parse_error_template.txt`
+  - `skills/<skill_name>/...`
+
+  ## Allowed actions
+  - `<replace_code>` on any file listed above.
+  - `<create_file>` and `<delete_file>` ONLY on files under `skills/`.
+  - Never delete or overwrite `skills/skill_template/**` (it is a canonical reference).
+  - Never modify flag-submission logic in `agent.py`.
+
+  ## Constraints
+  - Stay minimal. Every line you add costs tokens on every step the agent runs. Prefer one change that prevents many wasted steps over many small ones.
+  - The Gen-0 system template below is the unbloated baseline. Use it as a conciseness anchor; justify any growth in length against it.
+    ```
+    {{ gen0_system_template }}
+    ```
+  - If a file looks already adequate given the evidence, leave it alone.
+  - If after analysis nothing in the trajectory justifies a change, output your analysis and emit NO patches.
+
+  ## Output Format
+  - **Strategic Improvement Plan**: briefly state which file(s) you are changing and what concrete behavior change you expect.
+  - **Patches**: emit all `<replace_code>` / `<create_file>` / `<delete_file>` XML blocks for the files you decided to change, in this same response.
+
+  Provide your plan and all patches in one response, or conclude without patches.

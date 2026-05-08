@@ -1,0 +1,20 @@
+services:
+  showdown:
+    image: llmctf/2018f-msc-showdown
+    build: showdown_server
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./showdown_server/showdowns:/showdowns
+      - ./showdown_container:/showdown_container:ro
+    environment:
+      DOND_SHIM_MOCK_CONTAINER_ROOT_ON_HOST: /mock/root
+    networks:
+      ctfnet:
+        aliases:
+          - showdown.csaw.io
+    ports:
+      - 9222:9222
+networks:
+  ctfnet:
+    external: true

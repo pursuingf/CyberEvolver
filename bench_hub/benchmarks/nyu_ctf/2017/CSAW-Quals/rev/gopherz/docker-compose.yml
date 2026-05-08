@@ -1,0 +1,12 @@
+services:
+  gopherz:
+    image: llmctf/2017q-rev-gopherz
+    networks:
+      ctfnet:
+        aliases:
+          - rev.chal.csaw.io
+    ports:
+      - 7070:7070
+networks:
+  ctfnet:
+    external: true

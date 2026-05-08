@@ -1,0 +1,79 @@
+# Model dispatcher config — TEMPLATE.
+#
+# 1. Copy this file to common/configs/model.yml.
+# 2. Fill in real api_key + api_base values for each profile you actually use.
+# 3. NEVER commit common/configs/model.yml — it is git-ignored.
+#
+# Tip: keep secrets in a private password manager and inject via your shell
+# (e.g., direnv) so this file only references env vars where possible.
+
+DeepSeek-V3.1:
+  model: "DeepSeek-V3.1"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+
+DeepSeek-V3.1-p:
+  model: "DeepSeek-V3.1"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "https://llmapi.paratera.com"
+
+DeepSeek-V3.2:
+  model: "DeepSeek-V3.2"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "https://llmapi.paratera.com"
+
+Qwen2.5-72B-Instruct:
+  model: "Qwen2.5-72B-Instruct"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+
+Qwen3-32B:
+  model: "Qwen3-32B"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+
+Qwen3-235B-A22B-Instruct-2507:
+  model: "Qwen3-235B-A22B-Instruct-2507"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+
+Llama-3.3-70B-Instruct:
+  model: "Llama-3.3-70B-Instruct"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+  max_tokens: 1024
+
+Kimi-K2.5:
+  model: "kimi_k2.5"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+  temperature: 0.6
+  top_p: 0.95
+  max_tokens: 10240
+
+Minimax-2.5:
+  model: "minimax-2.5"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+  temperature: 1.0
+  top_p: 0.95
+  top_k: 40
+  max_tokens: 10240
+
+GLM-5:
+  model: "glm-5-fp8"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+  temperature: 1.0
+  top_p: 0.95
+  max_tokens: 10240
+
+gemini-3-pro-preview:
+  model: "gemini-3-pro-preview"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"
+
+gpt-5:
+  model: "gpt-5"
+  openai_api_key: "REPLACE_WITH_API_KEY"
+  openai_api_base: "REPLACE_WITH_API_BASE"

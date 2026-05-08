@@ -1,0 +1,18 @@
+services:
+  game-server-latest-dc9471fa25-e78753d0bebb71322eef:
+    image: llmctf/2019q-pwn-got_milk:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-dc9471fa25-e78753d0bebb71322eef:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 10705:8000
+    container_name: game-server-latest-dc9471fa25-e78753d0bebb71322eef
+    restart: always
+networks:
+  ctfnet-latest-dc9471fa25-e78753d0bebb71322eef:
+    name: ctfnet-latest-dc9471fa25-e78753d0bebb71322eef
+    external: true
+    driver: bridge

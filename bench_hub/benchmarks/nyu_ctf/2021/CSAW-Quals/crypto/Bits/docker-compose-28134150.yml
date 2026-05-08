@@ -1,0 +1,18 @@
+services:
+  game-server-latest-a3e5b6e476-40828b631ded6b29d0fb:
+    image: llmctf/2021q-cry-bits:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-a3e5b6e476-40828b631ded6b29d0fb:
+        aliases:
+        - crypto.chal.csaw.io
+    ports:
+    - 13866:5000
+    container_name: game-server-latest-a3e5b6e476-40828b631ded6b29d0fb
+    restart: always
+networks:
+  ctfnet-latest-a3e5b6e476-40828b631ded6b29d0fb:
+    name: ctfnet-latest-a3e5b6e476-40828b631ded6b29d0fb
+    external: true
+    driver: bridge

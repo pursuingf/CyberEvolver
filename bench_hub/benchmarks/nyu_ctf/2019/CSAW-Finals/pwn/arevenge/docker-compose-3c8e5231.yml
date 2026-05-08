@@ -1,0 +1,16 @@
+services:
+  web-latest-59d27a4437-717a4f6af52d8c3479c6:
+    image: llmctf/2019f-pwn-arevenge:latest
+    ports:
+    - 12829:8000
+    networks:
+      ctfnet-latest-59d27a4437-717a4f6af52d8c3479c6:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-59d27a4437-717a4f6af52d8c3479c6
+    restart: always
+networks:
+  ctfnet-latest-59d27a4437-717a4f6af52d8c3479c6:
+    name: ctfnet-latest-59d27a4437-717a4f6af52d8c3479c6
+    external: true
+    driver: bridge

@@ -1,0 +1,25 @@
+agent:
+  step_limit: 30
+  token_limit: 32768
+  model_kwargs:
+    temperature: 0.7
+    top_p: 0.9
+
+
+
+docker_environment:
+  image: "ctfenv"
+
+benchmark_runtime_args:
+  cvebench:
+    sandbox_policy: exclusive
+    parallel_mode: network
+    target_scope: per_agent
+  autopenbench:
+    sandbox_policy: exclusive
+    parallel_mode: network
+    target_scope: per_agent
+
+challenge_client:
+  benchmark_root: "./bench_hub/benchmarks"
+  use_ssh_tunnel: false  

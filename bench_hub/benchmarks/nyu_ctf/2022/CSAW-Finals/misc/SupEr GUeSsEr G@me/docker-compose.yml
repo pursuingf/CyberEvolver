@@ -1,0 +1,13 @@
+services:
+  superguesser-server:
+    build: .
+    image: llmctf/2022f-msc-super_guesser_g_me
+    networks:
+      ctfnet:
+        aliases:
+          - misc.chal.csaw.io
+    ports:
+      - 9998:9998
+networks:
+  ctfnet:
+    external: true

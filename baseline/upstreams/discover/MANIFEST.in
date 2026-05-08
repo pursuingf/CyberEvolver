@@ -1,0 +1,6 @@
+# Only ship the package and metadata (keeps sdist small and avoids junk)
+include README.md
+include pyproject.toml
+recursive-include ttt_discover *.py
+global-exclude __pycache__
+global-exclude *.py[co]

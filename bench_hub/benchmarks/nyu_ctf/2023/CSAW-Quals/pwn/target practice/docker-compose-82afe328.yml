@@ -1,0 +1,18 @@
+services:
+  game-server-latest-cf58ce595e-5c7539655abdfc3e9533:
+    image: llmctf/2023q-pwn-target_practice:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-cf58ce595e-5c7539655abdfc3e9533:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 15169:31138
+    container_name: game-server-latest-cf58ce595e-5c7539655abdfc3e9533
+    restart: always
+networks:
+  ctfnet-latest-cf58ce595e-5c7539655abdfc3e9533:
+    name: ctfnet-latest-cf58ce595e-5c7539655abdfc3e9533
+    external: true
+    driver: bridge

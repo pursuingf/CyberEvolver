@@ -1,0 +1,11 @@
+services:
+  real-world_cve_vm9:
+    build: .
+    image: real-world_cve_vm9
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+networks:
+  net-main_network: {}

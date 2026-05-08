@@ -1,0 +1,451 @@
+<html>
+
+<head>
+  <title>Visualizer</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+  <script src="//img.atcoder.jp/public/4432a1b/js/lib/jquery-1.9.1.min.js"></script>
+  <style type="text/css">
+  </style>
+</head>
+
+<body>
+  <span class="lang-en">
+    <p>
+      The problem statement is <a href="https://atcoder.jp/contests/ahc039/tasks/ahc039_a">here</a>.
+    </p>
+    Usage
+    <details open>
+      <p>
+        Changing the value in the Seed field will generate the corresponding input to the Input field.<br>
+        Pressing the Download button will download the inputs for seed values seed, seed+1, ..., seed+#cases-1 at
+        once.<br>
+      </p>
+      <p>
+        By running your program locally against the generated input and pasting the output of your program into the
+        Output field, the visualization results will be displayed.<br>
+        If multiple solutions are output, pressing the ▶ button starts animation.<br>
+        By pressing the Save as PNG button, you can download the visualization results.<br>
+      </p>
+      <p>
+        You can quickly switch between multiple outputs by pressing the Select File button at the top and selecting the
+        directory containing the output files.<br>
+        By naming the output file 1234.txt or abcd_1234.txt, the seed number (in this case 1234) is automatically set
+        when the file is selected.
+      </p>
+      <p>
+        The red points in the visualization results represent mackerel, and the blue points represent sardine.<br>
+        Hovering over each point displays its coordinates.<br>
+        You can zoom in and out with the mouse wheel, and drag to move.<br>
+      </p>
+    </details>
+  </span>
+  <span class="lang-ja">
+    <p>
+      問題文は<a href="https://atcoder.jp/contests/ahc039/tasks/ahc039_a">こちら</a>。
+    </p>
+    使い方
+    <details open>
+      <p>
+        Seed 欄の値を変えると対応する入力が Input 欄に生成されます。<br>
+        Download ボタンを押すと、シード値が seed, seed+1, ..., seed+#cases-1 に対応する入力を一括ダウンロード出来ます。<br>
+      </p>
+      <p>
+        生成された入力に対して解答プログラムをローカル実行し、プログラムの出力を Output 欄に貼り付けると、ビジュアライズ結果が表示されます。<br>
+        複数の解を出力した場合、▶ ボタンを押すと、アニメーションが開始します。<br>
+        Save as PNG ボタンを押すと、ビジュアライズ結果のダウンロードが出来ます。<br>
+      </p>
+      <p>
+        上部の「ファイルを選択」ボタンを押して出力ファイルを含むディレクトリを選択することで、複数の出力を素早く切り替えることが出来るようになります。<br>
+        出力ファイル名を 1234.txt もしくは abcd_1234.txt という形式にすることで、ファイルを選択時に自動的にseed番号(この場合は1234)が設定されます。
+      </p>
+      <p>
+        ビジュアライズ結果の赤い点はサバを、青い点はイワシを表します。<br>
+        各点にマウスカーソルを合わせると、その点の座標が表示されます。<br>
+        マウスホイールで拡大縮小、ドラッグで移動が出来ます。<br>
+      </p>
+    </details>
+  </span>
+  <hr>
+  <p>
+    <label>
+      File:
+      <select id="fileSelect" disabled></select>
+    </label>
+    <input type="file" id="dirSelect" directory webkitdirectory>
+  </p>
+  <p>
+    <label>
+      Seed:
+      <input type="number" id="seed" value="0" min="0" max="18446744073709551615" onchange="generateDebounced()" />
+    </label>&emsp;
+    <label>
+      #cases:
+      <input type="number" id="cases" value="100" min="1" max="10000">
+    </label>
+    <input type="button" id="download" value="Download" onclick="download()">
+  </p>
+  <p>
+    <label>
+      Input:<br>
+      <textarea id="input" rows="4" style="width:650px;" data-gramm_editor="false" oninput="updateOutput()"></textarea>
+    </label>
+  </p>
+  <p>
+    <label>
+      Output:<br>
+      <textarea id="output" rows="4" style="width:650px;" data-gramm_editor="false" oninput="updateOutput()">4
+0 0
+0 100000
+100000 100000
+100000 0
+</textarea>
+    </label>
+  </p>
+  <p>
+  </p>
+  <p>
+    <input type="button" id="save_png" value="Save as PNG">&ensp;
+    <input type="button" id="save_gif" value="Save as Animation GIF">&ensp;
+  </p>
+  <p style="display:flex;">
+    <input type="button" id="play" value="▶" style="width:32px;height:32px;bottom:5px;position:relative;">&ensp;
+    <label>
+      slow
+      <input type="range" id="speed" min="1" max="60" value="10" style="width:200px;">
+      fast&emsp;
+    </label>
+    <label>
+      turn:
+      <input type="number" id="turn" value="0" min="0" max="0" style="width:70px;text-align:right;"
+        onchange="update_t(this.value)" />
+    </label>&ensp;
+  </p>
+  <p>
+    <input type="range" id="t_bar" min="0" max="0" value="0" style="width:780px;" onchange="update_t(this.value)"
+      oninput="update_t(this.value)">
+  </p>
+
+  <hr>
+  <p id="score"></p>
+  <div id="result" style="user-select:none">
+  </div>
+  <br>
+
+  <script src='./gif.js'></script>
+  <script src='./jszip.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.5.0/dist/svg-pan-zoom.min.js"></script>
+  <script type="module">
+    var lang = (new URL(document.location)).searchParams.get("lang");
+    if (lang == null) {
+      lang = "ja";
+    }
+    if (lang == "ja") {
+      $(".lang-en").hide();
+    } else {
+      $(".lang-ja").hide();
+    }
+
+    function getGenOption() {
+      return new GenOption();
+    }
+
+    function getVisOption() {
+      return new VisOption();
+    }
+
+    import init, { gen, vis, get_max_turn, GenOption, VisOption } from './KNtTkgAy.js';
+
+    async function run() {
+      await init();
+      if ((new URL(document.location)).searchParams.get("seed") != null) {
+        document.getElementById("seed").value = (new URL(document.location)).searchParams.get("seed");
+      }
+      const output = (new URL(document.location)).searchParams.get("output");
+      if (output == "sample") {
+        document.getElementById("output").value = "10\n76431 45731\n83820 45731\n83820 87777\n70545 87777\n70545 33678\n53022 33678\n53022 44745\n16230 44745\n16230 25693\n76431 25693\n";
+      } else if (output != null) {
+        document.getElementById("output").value = output;
+      }
+      if (document.getElementById("input").value == "") {
+        generate();
+      } else {
+        updateOutput();
+      }
+    }
+    run();
+
+    let debounceTimer;
+    function generateDebounced() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(generate, 100);
+    }
+    window.generateDebounced = generateDebounced;
+
+    function generate() {
+      const seed = document.getElementById("seed").value;
+      const option = getGenOption();
+      const input = gen(seed, option);
+      document.getElementById("input").value = input;
+      updateOutput();
+    }
+    window.generate = generate;
+
+    function download() {
+      const dl = document.getElementById("download");
+      dl.disabled = true;
+      var seed = document.getElementById("seed").value;
+      const option = getGenOption();
+      const cases = Number(document.getElementById("cases").value);
+      const zip = new JSZip();
+      for (var i = 0; i < cases; i++) {
+        const input = gen(seed, option);
+        zip.file(("" + i).padStart(4, '0') + ".txt", input);
+        function inc(s) {
+          if (s.length == 0) {
+            return "1";
+          } else if (s.slice(-1) == "9") {
+            return inc(s.slice(0, -1)) + "0";
+          } else {
+            return s.slice(0, -1) + (Number(s.slice(-1)) + 1);
+          }
+        }
+        seed = inc(seed);
+      }
+
+      zip.generateAsync({ type: "blob" }, e => {
+        dl.value = String(Math.round(e.percent)).padStart(3, " ") + "% finished";
+      }).then(blob => {
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "in.zip";
+        a.click();
+        window.URL.revokeObjectURL(a.href);
+        dl.value = "Download";
+        dl.disabled = false;
+      });
+    }
+    window.download = download;
+
+    let panZoomInstance = null;
+    function visualize() {
+      const input = document.getElementById("input").value;
+      const output = document.getElementById("output").value;
+      const t = document.getElementById("turn").value;
+      const option = getVisOption();
+      try {
+        const ret = vis(input, output, t, option);
+        document.getElementById("score").innerHTML = "Score = " + ret.score + "&emsp;&emsp;Length = " + ret.length;
+        if (ret.error != "") {
+          document.getElementById("score").innerHTML += " <font color='red'>(" + ret.error + ")</font>";
+        }
+        document.getElementById("result").innerHTML = ret.svg;
+        if (panZoomInstance) {
+          panZoomInstance.destroy();
+          panZoomInstance = null;
+        }
+        panZoomInstance = svgPanZoom('#vis', {
+          zoomEnabled: true,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true,
+          minZoom: 1,
+          maxZoom: 10,
+          zoomScaleSensitivity: 0.5,
+        });
+      } catch (error) {
+        console.log(error);
+        document.getElementById("result").innerHTML = "<p>Invalid</p>";
+      }
+    }
+    window.visualize = visualize;
+
+    function update_t(t) {
+      const max_turn = Number(document.getElementById("turn").max);
+      const new_turn = Math.min(Math.max(0, t), max_turn);
+      document.getElementById("turn").value = new_turn;
+      document.getElementById("t_bar").value = new_turn;
+      visualize();
+    }
+    window.update_t = update_t;
+
+    var prev = Date.now();
+    const play = document.getElementById("play");
+    const speed = document.getElementById("speed");
+
+    function start_autoplay() {
+      if (Number(document.getElementById("turn").value) >= Number(document.getElementById("turn").max)) {
+        document.getElementById("turn").value = 0;
+      }
+      prev = Date.now();
+      play.value = "■";
+      update_t(document.getElementById("turn").value);
+    }
+    window.start_autoplay = start_autoplay;
+
+    function updateOutput() {
+      play.value = "▶";
+      const input = document.getElementById("input").value;
+      const output = document.getElementById("output").value;
+      try {
+        const t = get_max_turn(input, output);
+        document.getElementById("turn").max = t;
+        document.getElementById("t_bar").max = t;
+        update_t(t);
+      } catch (error) {
+        document.getElementById("result").innerHTML = "<p>Invalid</p>";
+      }
+    }
+    window.updateOutput = updateOutput;
+
+    play.onclick = event => {
+      if (play.value == "■") {
+        play.value = "▶";
+      } else {
+        start_autoplay();
+      }
+    }
+
+    function autoplay() {
+      if (play.value == "■") {
+        const now = Date.now();
+        let s = 2000;
+        if ((now - prev) * speed.value >= s) {
+          const inc = Math.floor((now - prev) * speed.value / s);
+          prev += Math.floor(inc * s / speed.value);
+          update_t(Number(document.getElementById("turn").value) + inc);
+          if (Number(document.getElementById("turn").value) >= Number(document.getElementById("turn").max)) {
+            play.value = "▶";
+          }
+        }
+      }
+      requestAnimationFrame(autoplay);
+    }
+    autoplay();
+
+    let selectedFiles = null;
+
+    document.getElementById("dirSelect").onchange = event => {
+      selectedFiles = Array.from(event.target.files);
+      const select = document.getElementById("fileSelect");
+      select.innerHTML = '';
+      if (selectedFiles.length > 0) {
+        selectedFiles.sort((a, b) => a.name.localeCompare(b.name));
+        for (let i = 0; i < selectedFiles.length; i++) {
+          const file = selectedFiles[i];
+          const option = document.createElement('option');
+          option.value = file.name;
+          option.textContent = file.name;
+          select.appendChild(option);
+        }
+        select.disabled = false;
+        const event = new Event("change");
+        select.dispatchEvent(event);
+      } else {
+        select.disabled = true;
+      }
+    }
+
+    document.getElementById("dirSelect").onclick = event => {
+      event.target.value = '';
+    }
+
+    document.getElementById("fileSelect").onchange = event => {
+      const name = event.target.value;
+      const file = selectedFiles.find(file => file.name === name);
+      if (file) {
+        const match = name.match(/(?:.*_)?(\d+)\..*/);
+        if (match) {
+          const seed = parseInt(match[1], 10);
+          const reader = new FileReader();
+          reader.onload = e => {
+            document.getElementById("seed").value = seed;
+            document.getElementById("output").value = e.target.result;
+            generate();
+            updateOutput();
+          }
+          reader.readAsText(file);
+        } else {
+          document.getElementById("input").value = "File name format is invalid.";
+        }
+      }
+    }
+
+    document.getElementById("save_png").onclick = event => {
+      const input = document.getElementById("input").value;
+      const output = document.getElementById("output").value;
+      const t = document.getElementById("turn").value;
+      const option = getVisOption();
+      const svgData = vis(input, output, t, option).svg;
+      const svg = new DOMParser().parseFromString(svgData, "image/svg+xml").getElementById("vis");
+      const canvas = document.createElement("canvas");
+      canvas.width = svg.width.baseVal.value;
+      canvas.height = svg.height.baseVal.value;
+      const ctx = canvas.getContext("2d");
+      const image = new Image;
+      image.onload = function () {
+        ctx.drawImage(image, 0, 0);
+        const a = document.createElement("a");
+        a.href = canvas.toDataURL("image/png");
+        a.download = "vis.png";
+        a.click();
+      }
+      image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
+    }
+
+    const save_gif = document.getElementById("save_gif");
+    save_gif.onclick = event => {
+      save_gif.disabled = true;
+      save_gif.value = "Generating GIF...";
+      const input = document.getElementById("input").value;
+      const output = document.getElementById("output").value;
+      const option = getVisOption();
+      const max_turn = Number(document.getElementById("turn").max);
+      const step = Math.max(1, Math.round(100 * speed.value / 2000));
+      const delay = step * 2000 / speed.value;
+      const gif = new GIF({
+        workers: 2,
+        quality: 10,
+      });
+      gif.on("progress", function (p) {
+        save_gif.value = String(Math.round(50 + 50 * p)).padStart(3, " ") + "% finished";
+      });
+      function add_frame(t) {
+        save_gif.value = String(Math.round(50.0 * t / max_turn)).padStart(3, " ") + "% finished";
+        const svgData = vis(input, output, t, option).svg;
+        const svg = new DOMParser().parseFromString(svgData, "image/svg+xml").getElementById("vis");
+        const canvas = document.createElement("canvas");
+        canvas.width = svg.width.baseVal.value;
+        canvas.height = svg.height.baseVal.value;
+        const ctx = canvas.getContext("2d");
+        const image = new Image;
+        image.onload = function () {
+          ctx.drawImage(image, 0, 0);
+          if (t == max_turn) {
+            gif.addFrame(canvas, { delay: 3000 });
+          } else {
+            gif.addFrame(canvas, { delay: delay });
+          }
+          if (t < max_turn) {
+            add_frame(Math.min(t + step, max_turn));
+          } else {
+            gif.on('finished', function (blob) {
+              const a = document.createElement("a");
+              a.href = URL.createObjectURL(blob);
+              a.download = "vis.gif";
+              a.click();
+              window.URL.revokeObjectURL(a.href);
+              save_gif.value = "Save as Animation GIF";
+              save_gif.disabled = false;
+            });
+            gif.render();
+          }
+        }
+        image.src = "data:image/svg+xml;charset=utf-8;base64," + btoa(unescape(encodeURIComponent(svgData)));
+      }
+      add_frame(0);
+    }
+
+  </script>
+</body>
+
+</html>

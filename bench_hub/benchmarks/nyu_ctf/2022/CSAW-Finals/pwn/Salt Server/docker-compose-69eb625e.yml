@@ -1,0 +1,18 @@
+services:
+  salt_server-server-latest-0e4e356d59-ff59c89f0346d890c0a8:
+    image: llmctf/2022f-pwn-salt_server
+    ports:
+    - 11313:8787
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-0e4e356d59-ff59c89f0346d890c0a8:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: salt_server-server-latest-0e4e356d59-ff59c89f0346d890c0a8
+    restart: always
+networks:
+  ctfnet-latest-0e4e356d59-ff59c89f0346d890c0a8:
+    name: ctfnet-latest-0e4e356d59-ff59c89f0346d890c0a8
+    external: true
+    driver: bridge

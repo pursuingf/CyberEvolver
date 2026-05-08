@@ -1,0 +1,16 @@
+services:
+  web-latest-d8e66f5840-64211c135829ea250b01:
+    image: llmctf/2020q-pwn-roppity:latest
+    ports:
+    - 17533:8000
+    networks:
+      ctfnet-latest-d8e66f5840-64211c135829ea250b01:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-d8e66f5840-64211c135829ea250b01
+    restart: always
+networks:
+  ctfnet-latest-d8e66f5840-64211c135829ea250b01:
+    name: ctfnet-latest-d8e66f5840-64211c135829ea250b01
+    external: true
+    driver: bridge

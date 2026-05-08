@@ -1,0 +1,18 @@
+services:
+  game-server-latest-3f55bff89d-0eb218b7ab38bc2c731d:
+    image: llmctf/2022q-pwn-ezrop
+    ports:
+    - 15161:9999
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-3f55bff89d-0eb218b7ab38bc2c731d:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: game-server-latest-3f55bff89d-0eb218b7ab38bc2c731d
+    restart: always
+networks:
+  ctfnet-latest-3f55bff89d-0eb218b7ab38bc2c731d:
+    name: ctfnet-latest-3f55bff89d-0eb218b7ab38bc2c731d
+    external: true
+    driver: bridge

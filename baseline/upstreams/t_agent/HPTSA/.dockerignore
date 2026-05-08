@@ -1,0 +1,7 @@
+.venv
+.git
+.gitignore
+hacking_pdfs
+agent_workspace
+run_all.sh
+run.sh

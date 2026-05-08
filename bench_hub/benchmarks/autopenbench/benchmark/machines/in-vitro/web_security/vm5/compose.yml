@@ -1,0 +1,15 @@
+services:
+  in-vitro_web_security_vm5:
+    build: .
+    image: in-vitro_web_security_vm5
+    hostname: in-vitro_web_security_vm5
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    volumes:
+    - ./flag.txt:/flag.txt
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+networks:
+  net-main_network: {}

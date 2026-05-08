@@ -1,0 +1,16 @@
+services:
+  zone-latest-b1c5b950fc-741920d90ea697f70c22:
+    image: llmctf/2017q-pwn-zone
+    ports:
+    - 13525:8000
+    networks:
+      ctfnet-latest-b1c5b950fc-741920d90ea697f70c22:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: zone-latest-b1c5b950fc-741920d90ea697f70c22
+    restart: always
+networks:
+  ctfnet-latest-b1c5b950fc-741920d90ea697f70c22:
+    name: ctfnet-latest-b1c5b950fc-741920d90ea697f70c22
+    external: true
+    driver: bridge

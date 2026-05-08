@@ -1,0 +1,12 @@
+services:
+  prophecy:
+    image: llmctf/2017q-rev-prophecy
+    networks:
+      ctfnet:
+        aliases:
+          - rev.chal.csaw.io
+    ports:
+      - 8027:8027
+networks:
+  ctfnet:
+    external: true

@@ -1,0 +1,16 @@
+services:
+  web-latest-314c88a988-c84f10980982402c7270:
+    image: llmctf/2020q-pwn-roppity:latest
+    ports:
+    - 10059:8000
+    networks:
+      ctfnet-latest-314c88a988-c84f10980982402c7270:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-314c88a988-c84f10980982402c7270
+    restart: always
+networks:
+  ctfnet-latest-314c88a988-c84f10980982402c7270:
+    name: ctfnet-latest-314c88a988-c84f10980982402c7270
+    external: true
+    driver: bridge

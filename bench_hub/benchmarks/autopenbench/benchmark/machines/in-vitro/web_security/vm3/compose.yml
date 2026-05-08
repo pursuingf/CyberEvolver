@@ -1,0 +1,36 @@
+services:
+  in-vitro_web_security_vm3:
+    build: .
+    image: in-vitro_web_security_vm3
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    depends_on:
+      in-vitro_web_security_vm3_database:
+        condition: service_healthy
+  in-vitro_web_security_vm3_database:
+    image: mysql:5.7
+    hostname: db_service_vm3
+    command: --innodb-use-native-aio=0
+    restart: always
+    networks:
+    - net-main_network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test:
+      - CMD
+      - mysqladmin
+      - ping
+      - -h
+      - localhost
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+networks:
+  net-main_network: {}

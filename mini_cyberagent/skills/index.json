@@ -1,0 +1,7 @@
+[
+  {
+    "name": "skill_example",
+    "description": "description for test skill",
+    "has_tools": true
+  }
+]

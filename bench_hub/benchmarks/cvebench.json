@@ -1,0 +1,282 @@
+{
+  "cvb-CVE-2023-37999": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2023-37999",
+    "path": "cvebench/critical/challenges/CVE-2023-37999"
+  },
+  "cvb-CVE-2023-51483": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2023-51483",
+    "path": "cvebench/critical/challenges/CVE-2023-51483"
+  },
+  "cvb-CVE-2024-22120": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-22120",
+    "path": "cvebench/critical/challenges/CVE-2024-22120"
+  },
+  "cvb-CVE-2024-2359": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-2359",
+    "path": "cvebench/critical/challenges/CVE-2024-2359"
+  },
+  "cvb-CVE-2024-25641": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-25641",
+    "path": "cvebench/critical/challenges/CVE-2024-25641"
+  },
+  "cvb-CVE-2024-2624": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-2624",
+    "path": "cvebench/critical/challenges/CVE-2024-2624"
+  },
+  "cvb-CVE-2024-2771": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-2771",
+    "path": "cvebench/critical/challenges/CVE-2024-2771"
+  },
+  "cvb-CVE-2024-30542": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-30542",
+    "path": "cvebench/critical/challenges/CVE-2024-30542"
+  },
+  "cvb-CVE-2024-31611": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-31611",
+    "path": "cvebench/critical/challenges/CVE-2024-31611"
+  },
+  "cvb-CVE-2024-32167": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-32167",
+    "path": "cvebench/critical/challenges/CVE-2024-32167"
+  },
+  "cvb-CVE-2024-3234": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-3234",
+    "path": "cvebench/critical/challenges/CVE-2024-3234"
+  },
+  "cvb-CVE-2024-32511": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-32511",
+    "path": "cvebench/critical/challenges/CVE-2024-32511"
+  },
+  "cvb-CVE-2024-32964": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-32964",
+    "path": "cvebench/critical/challenges/CVE-2024-32964"
+  },
+  "cvb-CVE-2024-32980": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-32980",
+    "path": "cvebench/critical/challenges/CVE-2024-32980"
+  },
+  "cvb-CVE-2024-32986": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-32986",
+    "path": "cvebench/critical/challenges/CVE-2024-32986"
+  },
+  "cvb-CVE-2024-34070": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-34070",
+    "path": "cvebench/critical/challenges/CVE-2024-34070"
+  },
+  "cvb-CVE-2024-3408": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-3408",
+    "path": "cvebench/critical/challenges/CVE-2024-3408"
+  },
+  "cvb-CVE-2024-34340": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-34340",
+    "path": "cvebench/critical/challenges/CVE-2024-34340"
+  },
+  "cvb-CVE-2024-34359": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-34359",
+    "path": "cvebench/critical/challenges/CVE-2024-34359"
+  },
+  "cvb-CVE-2024-34716": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-34716",
+    "path": "cvebench/critical/challenges/CVE-2024-34716"
+  },
+  "cvb-CVE-2024-3495": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-3495",
+    "path": "cvebench/critical/challenges/CVE-2024-3495"
+  },
+  "cvb-CVE-2024-35187": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-35187",
+    "path": "cvebench/critical/challenges/CVE-2024-35187"
+  },
+  "cvb-CVE-2024-3552": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-3552",
+    "path": "cvebench/critical/challenges/CVE-2024-3552"
+  },
+  "cvb-CVE-2024-36412": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-36412",
+    "path": "cvebench/critical/challenges/CVE-2024-36412"
+  },
+  "cvb-CVE-2024-36675": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-36675",
+    "path": "cvebench/critical/challenges/CVE-2024-36675"
+  },
+  "cvb-CVE-2024-36779": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-36779",
+    "path": "cvebench/critical/challenges/CVE-2024-36779"
+  },
+  "cvb-CVE-2024-36858": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-36858",
+    "path": "cvebench/critical/challenges/CVE-2024-36858"
+  },
+  "cvb-CVE-2024-37388": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-37388",
+    "path": "cvebench/critical/challenges/CVE-2024-37388"
+  },
+  "cvb-CVE-2024-37831": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-37831",
+    "path": "cvebench/critical/challenges/CVE-2024-37831"
+  },
+  "cvb-CVE-2024-37849": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-37849",
+    "path": "cvebench/critical/challenges/CVE-2024-37849"
+  },
+  "cvb-CVE-2024-4223": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4223",
+    "path": "cvebench/critical/challenges/CVE-2024-4223"
+  },
+  "cvb-CVE-2024-4320": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4320",
+    "path": "cvebench/critical/challenges/CVE-2024-4320"
+  },
+  "cvb-CVE-2024-4323": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4323",
+    "path": "cvebench/critical/challenges/CVE-2024-4323"
+  },
+  "cvb-CVE-2024-4442": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4442",
+    "path": "cvebench/critical/challenges/CVE-2024-4442"
+  },
+  "cvb-CVE-2024-4443": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4443",
+    "path": "cvebench/critical/challenges/CVE-2024-4443"
+  },
+  "cvb-CVE-2024-4701": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-4701",
+    "path": "cvebench/critical/challenges/CVE-2024-4701"
+  },
+  "cvb-CVE-2024-5084": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-5084",
+    "path": "cvebench/critical/challenges/CVE-2024-5084"
+  },
+  "cvb-CVE-2024-5314": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-5314",
+    "path": "cvebench/critical/challenges/CVE-2024-5314"
+  },
+  "cvb-CVE-2024-5315": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-5315",
+    "path": "cvebench/critical/challenges/CVE-2024-5315"
+  },
+  "cvb-CVE-2024-5452": {
+    "benchmark": "cvebench",
+    "benchmark_family": "cvebench",
+    "category": "critical",
+    "challenge": "CVE-2024-5452",
+    "path": "cvebench/critical/challenges/CVE-2024-5452"
+  }
+}

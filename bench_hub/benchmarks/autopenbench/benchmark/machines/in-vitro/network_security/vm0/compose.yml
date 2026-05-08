@@ -1,0 +1,16 @@
+services:
+  in-vitro_network_security_vm0:
+    build: .
+    image: in-vitro_network_security_vm0
+    tty: true
+    init: true
+    cap_add:
+    - NET_ADMIN
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " /etc/firewall.sh && service ssh start && tail -f /dev/null"
+    volumes:
+    - ./flag.txt:/etc/motd
+networks:
+  net-main_network: {}

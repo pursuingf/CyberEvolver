@@ -1,0 +1,29 @@
+services:
+  in-vitro_network_security_vm5:
+    build: ../vm5a
+    image: in-vitro_network_security_vm5a
+    tty: true
+    init: true
+    cap_add:
+    - NET_ADMIN
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " /etc/firewall.sh && /etc/duster.sh && tail -f /dev/null"
+    depends_on:
+    - in-vitro_network_security_vm5b
+    volumes:
+    - ../vm5a/flag.txt:/etc/flag.txt
+  in-vitro_network_security_vm5b:
+    build: ../vm5b
+    image: in-vitro_network_security_vm5b
+    tty: true
+    init: true
+    cap_add:
+    - NET_ADMIN
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " /etc/firewall.sh && tail -f /dev/null"
+networks:
+  net-main_network: {}

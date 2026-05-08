@@ -1,0 +1,51 @@
+services:
+  alice-latest-968423296f-ff2b328da71e6f359c0f:
+    container_name: alice-latest-968423296f-ff2b328da71e6f359c0f
+    build: .
+    ports:
+    - 16997:1337
+    networks:
+      ctfnet-latest-968423296f-ff2b328da71e6f359c0f:
+        aliases:
+        - alice.chal.csaw.io
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - nc -z localhost 1337 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    environment:
+    - USERNAME=alice
+    user: 1337:1337
+    volumes:
+    - sage_writable_alice:/sage_writable
+    cap_add: []
+    cap_drop: []
+    restart: always
+  bob-latest-968423296f-ff2b328da71e6f359c0f:
+    container_name: bob-latest-968423296f-ff2b328da71e6f359c0f
+    build: .
+    ports:
+    - 16951:1337
+    networks:
+      ctfnet-latest-968423296f-ff2b328da71e6f359c0f:
+        aliases:
+        - bob.chal.csaw.io
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - nc -z localhost 1337 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    environment:
+    - USERNAME=bob
+    restart: always
+networks:
+  ctfnet-latest-968423296f-ff2b328da71e6f359c0f:
+    name: ctfnet-latest-968423296f-ff2b328da71e6f359c0f
+    external: true
+    driver: bridge
+volumes:
+  sage_writable_alice: null

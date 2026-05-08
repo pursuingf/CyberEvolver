@@ -1,0 +1,16 @@
+services:
+  web-latest-16b79f5302-47626b85e918768f547b:
+    image: llmctf/2020f-cry-eccentric:latest
+    ports:
+    - 13645:5000
+    networks:
+      ctfnet-latest-16b79f5302-47626b85e918768f547b:
+        aliases:
+        - crypto.chal.csaw.io
+    container_name: web-latest-16b79f5302-47626b85e918768f547b
+    restart: always
+networks:
+  ctfnet-latest-16b79f5302-47626b85e918768f547b:
+    name: ctfnet-latest-16b79f5302-47626b85e918768f547b
+    external: true
+    driver: bridge

@@ -1,0 +1,18 @@
+services:
+  game-server-latest-d1b5e3dbe8-6d98a445d4df6386eefc:
+    image: llmctf/2023q-pwn-unlimited_subway:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-d1b5e3dbe8-6d98a445d4df6386eefc:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 11239:7900
+    container_name: game-server-latest-d1b5e3dbe8-6d98a445d4df6386eefc
+    restart: always
+networks:
+  ctfnet-latest-d1b5e3dbe8-6d98a445d4df6386eefc:
+    name: ctfnet-latest-d1b5e3dbe8-6d98a445d4df6386eefc
+    external: true
+    driver: bridge

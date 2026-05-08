@@ -1,0 +1,16 @@
+services:
+  web-latest-9aebb9c941-7b0c81f426d022a4e532:
+    image: llmctf/2018q-pwn-bigboi:latest
+    ports:
+    - 15201:1436
+    networks:
+      ctfnet-latest-9aebb9c941-7b0c81f426d022a4e532:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-9aebb9c941-7b0c81f426d022a4e532
+    restart: always
+networks:
+  ctfnet-latest-9aebb9c941-7b0c81f426d022a4e532:
+    name: ctfnet-latest-9aebb9c941-7b0c81f426d022a4e532
+    external: true
+    driver: bridge

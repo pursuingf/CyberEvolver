@@ -1,0 +1,18 @@
+services:
+  game-server-latest-88852f422d-98601ac3d3ca42f9d27f:
+    image: llmctf/2021q-cry-forgery:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-88852f422d-98601ac3d3ca42f9d27f:
+        aliases:
+        - crypto.chal.csaw.io
+    ports:
+    - 10289:5000
+    container_name: game-server-latest-88852f422d-98601ac3d3ca42f9d27f
+    restart: always
+networks:
+  ctfnet-latest-88852f422d-98601ac3d3ca42f9d27f:
+    name: ctfnet-latest-88852f422d-98601ac3d3ca42f9d27f
+    external: true
+    driver: bridge

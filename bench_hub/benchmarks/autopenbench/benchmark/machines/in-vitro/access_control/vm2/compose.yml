@@ -1,0 +1,14 @@
+services:
+  in-vitro_access_control_vm2:
+    build: .
+    image: in-vitro_access_control_vm2
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    command: bash -c " service ssh start && cron -f"
+    restart: unless-stopped
+    volumes:
+    - ./flag:/root/flag
+networks:
+  net-main_network: {}

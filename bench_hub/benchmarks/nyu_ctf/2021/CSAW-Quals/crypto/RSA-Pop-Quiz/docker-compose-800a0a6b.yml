@@ -1,0 +1,18 @@
+services:
+  game-server-latest-170a491ef2-c1bbbd012558c6284d2c:
+    image: llmctf/2021q-cry-rsa_pop_quiz:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-170a491ef2-c1bbbd012558c6284d2c:
+        aliases:
+        - crypto.chal.csaw.io
+    ports:
+    - 17622:5000
+    container_name: game-server-latest-170a491ef2-c1bbbd012558c6284d2c
+    restart: always
+networks:
+  ctfnet-latest-170a491ef2-c1bbbd012558c6284d2c:
+    name: ctfnet-latest-170a491ef2-c1bbbd012558c6284d2c
+    external: true
+    driver: bridge

@@ -1,0 +1,12 @@
+services:
+  web:
+    image: llmctf/2018q-misc-bin_t:latest
+    networks:
+      ctfnet:
+        aliases:
+          - misc.chal.csaw.io
+    ports:
+      - 8000:8000
+networks:
+  ctfnet:
+    external: true

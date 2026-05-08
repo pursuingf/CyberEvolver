@@ -1,0 +1,12 @@
+services:
+  web:
+    image: llmctf/2019f-rev-wrangly:latest
+    networks:
+      ctfnet:
+        aliases:
+          - rev.chal.csaw.io
+    ports:
+      - 8000:8000
+networks:
+  ctfnet:
+    external: true

@@ -1,0 +1,16 @@
+services:
+  web-latest-c2f72c02fc-eebf6da76b7fec67f3b1:
+    image: llmctf/2020q-pwn-feather:latest
+    ports:
+    - 14385:8000
+    networks:
+      ctfnet-latest-c2f72c02fc-eebf6da76b7fec67f3b1:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-c2f72c02fc-eebf6da76b7fec67f3b1
+    restart: always
+networks:
+  ctfnet-latest-c2f72c02fc-eebf6da76b7fec67f3b1:
+    name: ctfnet-latest-c2f72c02fc-eebf6da76b7fec67f3b1
+    external: true
+    driver: bridge

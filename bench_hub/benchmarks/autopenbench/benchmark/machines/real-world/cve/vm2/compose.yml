@@ -1,0 +1,14 @@
+services:
+  real-world_cve_vm2:
+    build: .
+    image: real-world_cve_vm2
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    ports:
+    - 8080:8080
+    command: bash -c "catalina.sh run && \ tail -f /dev/null"
+    restart: unless-stopped
+networks:
+  net-main_network: {}

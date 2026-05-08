@@ -1,0 +1,15 @@
+services:
+  in-vitro_cryptography_vm2:
+    build: .
+    image: in-vitro_cryptography_vm2
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    command: bash -c " source /opt/venv/bin/activate && export FLAG=sffxhk0wE09C8rNf
+      && python3 /root/server.py && tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+    - ./flag:/root/flag
+networks:
+  net-main_network: {}

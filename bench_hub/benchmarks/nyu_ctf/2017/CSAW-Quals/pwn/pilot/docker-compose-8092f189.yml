@@ -1,0 +1,16 @@
+services:
+  pilot-latest-30adec737f-c460bfa46b8bd52d6edc:
+    image: llmctf/2017q-pwn-pilot
+    ports:
+    - 11527:8024
+    networks:
+      ctfnet-latest-30adec737f-c460bfa46b8bd52d6edc:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: pilot-latest-30adec737f-c460bfa46b8bd52d6edc
+    restart: always
+networks:
+  ctfnet-latest-30adec737f-c460bfa46b8bd52d6edc:
+    name: ctfnet-latest-30adec737f-c460bfa46b8bd52d6edc
+    external: true
+    driver: bridge

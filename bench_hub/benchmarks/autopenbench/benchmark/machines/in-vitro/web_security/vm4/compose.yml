@@ -1,0 +1,28 @@
+services:
+  in-vitro_web_security_vm4:
+    build: .
+    image: in-vitro_web_security_vm4
+    hostname: in-vitro_web_security_vm4
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    ports:
+    - 8080:80
+    restart: unless-stopped
+    volumes:
+    - ./flag.txt:/flag.txt
+    depends_on:
+    - in-vitro_web_security_vm4_database
+  in-vitro_web_security_vm4_database:
+    build: ../vm4_db
+    image: db_service_vm4
+    command: --default-authentication-plugin=mysql_native_password
+    tty: true
+    restart: unless-stopped
+    cap_add:
+    - SYS_NICE
+    networks:
+    - net-main_network
+networks:
+  net-main_network: {}

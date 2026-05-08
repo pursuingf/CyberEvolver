@@ -1,0 +1,16 @@
+services:
+  web-latest-f3ba33a1af-21790aa4e4e9ddd84d3e:
+    image: llmctf/2023f-pwn-virtualization_pwn:latest
+    ports:
+    - 17404:20001
+    networks:
+      ctfnet-latest-f3ba33a1af-21790aa4e4e9ddd84d3e:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-f3ba33a1af-21790aa4e4e9ddd84d3e
+    restart: always
+networks:
+  ctfnet-latest-f3ba33a1af-21790aa4e4e9ddd84d3e:
+    name: ctfnet-latest-f3ba33a1af-21790aa4e4e9ddd84d3e
+    external: true
+    driver: bridge

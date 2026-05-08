@@ -1,0 +1,13 @@
+services:
+  embryoleak-server:
+    build: .
+    image: llmctf/2022f-msc-embrey0_leak
+    networks:
+      ctfnet:
+        aliases:
+          - misc.chal.csaw.io
+    ports:
+      - 9999:9999
+networks:
+  ctfnet:
+    external: true

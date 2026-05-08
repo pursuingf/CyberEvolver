@@ -1,0 +1,16 @@
+services:
+  cryptopwn-server-latest-0ed94994b0-1ff0335460cf793ec7cf:
+    image: llmctf/2022f-pwn-cryptopwn
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-0ed94994b0-1ff0335460cf793ec7cf:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: cryptopwn-server-latest-0ed94994b0-1ff0335460cf793ec7cf
+    restart: always
+networks:
+  ctfnet-latest-0ed94994b0-1ff0335460cf793ec7cf:
+    name: ctfnet-latest-0ed94994b0-1ff0335460cf793ec7cf
+    external: true
+    driver: bridge

@@ -1,0 +1,16 @@
+services:
+  web-latest-c4e68fda05-33643f8be30fedda871e:
+    image: llmctf/2018q-pwn-get_it:latest
+    ports:
+    - 15978:1437
+    networks:
+      ctfnet-latest-c4e68fda05-33643f8be30fedda871e:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-c4e68fda05-33643f8be30fedda871e
+    restart: always
+networks:
+  ctfnet-latest-c4e68fda05-33643f8be30fedda871e:
+    name: ctfnet-latest-c4e68fda05-33643f8be30fedda871e
+    external: true
+    driver: bridge

@@ -1,0 +1,639 @@
+{
+  "ic-crypto-12": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #12",
+    "challenge_id": "12",
+    "path": "intercode_ctf/crypto/12"
+  },
+  "ic-crypto-5": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #5",
+    "challenge_id": "5",
+    "path": "intercode_ctf/crypto/5"
+  },
+  "ic-crypto-57": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #57",
+    "challenge_id": "57",
+    "path": "intercode_ctf/crypto/57"
+  },
+  "ic-crypto-58": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #58",
+    "challenge_id": "58",
+    "path": "intercode_ctf/crypto/58"
+  },
+  "ic-crypto-69": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #69",
+    "challenge_id": "69",
+    "path": "intercode_ctf/crypto/69"
+  },
+  "ic-crypto-72": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #72",
+    "challenge_id": "72",
+    "path": "intercode_ctf/crypto/72"
+  },
+  "ic-crypto-73": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #73",
+    "challenge_id": "73",
+    "path": "intercode_ctf/crypto/73"
+  },
+  "ic-crypto-74": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #74",
+    "challenge_id": "74",
+    "path": "intercode_ctf/crypto/74"
+  },
+  "ic-crypto-79": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #79",
+    "challenge_id": "79",
+    "path": "intercode_ctf/crypto/79"
+  },
+  "ic-crypto-80": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #80",
+    "challenge_id": "80",
+    "path": "intercode_ctf/crypto/80"
+  },
+  "ic-crypto-86": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #86",
+    "challenge_id": "86",
+    "path": "intercode_ctf/crypto/86"
+  },
+  "ic-crypto-90": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #90",
+    "challenge_id": "90",
+    "path": "intercode_ctf/crypto/90"
+  },
+  "ic-crypto-92": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #92",
+    "challenge_id": "92",
+    "path": "intercode_ctf/crypto/92"
+  },
+  "ic-crypto-93": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #93",
+    "challenge_id": "93",
+    "path": "intercode_ctf/crypto/93"
+  },
+  "ic-crypto-96": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #96",
+    "challenge_id": "96",
+    "path": "intercode_ctf/crypto/96"
+  },
+  "ic-crypto-97": {
+    "benchmark": "intercode_ctf",
+    "category": "crypto",
+    "challenge": "Challenge #97",
+    "challenge_id": "97",
+    "path": "intercode_ctf/crypto/97"
+  },
+  "ic-forensics-1": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #1",
+    "challenge_id": "1",
+    "path": "intercode_ctf/forensics/1"
+  },
+  "ic-forensics-14": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #14",
+    "challenge_id": "14",
+    "path": "intercode_ctf/forensics/14"
+  },
+  "ic-forensics-2": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #2",
+    "challenge_id": "2",
+    "path": "intercode_ctf/forensics/2"
+  },
+  "ic-forensics-3": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #3",
+    "challenge_id": "3",
+    "path": "intercode_ctf/forensics/3"
+  },
+  "ic-forensics-59": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #59",
+    "challenge_id": "59",
+    "path": "intercode_ctf/forensics/59"
+  },
+  "ic-forensics-61": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #61",
+    "challenge_id": "61",
+    "path": "intercode_ctf/forensics/61"
+  },
+  "ic-forensics-64": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #64",
+    "challenge_id": "64",
+    "path": "intercode_ctf/forensics/64"
+  },
+  "ic-forensics-65": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #65",
+    "challenge_id": "65",
+    "path": "intercode_ctf/forensics/65"
+  },
+  "ic-forensics-67": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #67",
+    "challenge_id": "67",
+    "path": "intercode_ctf/forensics/67"
+  },
+  "ic-forensics-70": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #70",
+    "challenge_id": "70",
+    "path": "intercode_ctf/forensics/70"
+  },
+  "ic-forensics-71": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #71",
+    "challenge_id": "71",
+    "path": "intercode_ctf/forensics/71"
+  },
+  "ic-forensics-8": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #8",
+    "challenge_id": "8",
+    "path": "intercode_ctf/forensics/8"
+  },
+  "ic-forensics-94": {
+    "benchmark": "intercode_ctf",
+    "category": "forensics",
+    "challenge": "Challenge #94",
+    "challenge_id": "94",
+    "path": "intercode_ctf/forensics/94"
+  },
+  "ic-misc-11": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #11",
+    "challenge_id": "11",
+    "path": "intercode_ctf/misc/11"
+  },
+  "ic-misc-17": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #17",
+    "challenge_id": "17",
+    "path": "intercode_ctf/misc/17"
+  },
+  "ic-misc-18": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #18",
+    "challenge_id": "18",
+    "path": "intercode_ctf/misc/18"
+  },
+  "ic-misc-19": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #19",
+    "challenge_id": "19",
+    "path": "intercode_ctf/misc/19"
+  },
+  "ic-misc-20": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #20",
+    "challenge_id": "20",
+    "path": "intercode_ctf/misc/20"
+  },
+  "ic-misc-21": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #21",
+    "challenge_id": "21",
+    "path": "intercode_ctf/misc/21"
+  },
+  "ic-misc-22": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #22",
+    "challenge_id": "22",
+    "path": "intercode_ctf/misc/22"
+  },
+  "ic-misc-23": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #23",
+    "challenge_id": "23",
+    "path": "intercode_ctf/misc/23"
+  },
+  "ic-misc-24": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #24",
+    "challenge_id": "24",
+    "path": "intercode_ctf/misc/24"
+  },
+  "ic-misc-25": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #25",
+    "challenge_id": "25",
+    "path": "intercode_ctf/misc/25"
+  },
+  "ic-misc-26": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #26",
+    "challenge_id": "26",
+    "path": "intercode_ctf/misc/26"
+  },
+  "ic-misc-27": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #27",
+    "challenge_id": "27",
+    "path": "intercode_ctf/misc/27"
+  },
+  "ic-misc-30": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #30",
+    "challenge_id": "30",
+    "path": "intercode_ctf/misc/30"
+  },
+  "ic-misc-31": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #31",
+    "challenge_id": "31",
+    "path": "intercode_ctf/misc/31"
+  },
+  "ic-misc-32": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #32",
+    "challenge_id": "32",
+    "path": "intercode_ctf/misc/32"
+  },
+  "ic-misc-33": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #33",
+    "challenge_id": "33",
+    "path": "intercode_ctf/misc/33"
+  },
+  "ic-misc-34": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #34",
+    "challenge_id": "34",
+    "path": "intercode_ctf/misc/34"
+  },
+  "ic-misc-35": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #35",
+    "challenge_id": "35",
+    "path": "intercode_ctf/misc/35"
+  },
+  "ic-misc-36": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #36",
+    "challenge_id": "36",
+    "path": "intercode_ctf/misc/36"
+  },
+  "ic-misc-37": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #37",
+    "challenge_id": "37",
+    "path": "intercode_ctf/misc/37"
+  },
+  "ic-misc-38": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #38",
+    "challenge_id": "38",
+    "path": "intercode_ctf/misc/38"
+  },
+  "ic-misc-39": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #39",
+    "challenge_id": "39",
+    "path": "intercode_ctf/misc/39"
+  },
+  "ic-misc-4": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #4",
+    "challenge_id": "4",
+    "path": "intercode_ctf/misc/4"
+  },
+  "ic-misc-40": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #40",
+    "challenge_id": "40",
+    "path": "intercode_ctf/misc/40"
+  },
+  "ic-misc-41": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #41",
+    "challenge_id": "41",
+    "path": "intercode_ctf/misc/41"
+  },
+  "ic-misc-42": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #42",
+    "challenge_id": "42",
+    "path": "intercode_ctf/misc/42"
+  },
+  "ic-misc-6": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #6",
+    "challenge_id": "6",
+    "path": "intercode_ctf/misc/6"
+  },
+  "ic-misc-60": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #60",
+    "challenge_id": "60",
+    "path": "intercode_ctf/misc/60"
+  },
+  "ic-misc-63": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #63",
+    "challenge_id": "63",
+    "path": "intercode_ctf/misc/63"
+  },
+  "ic-misc-7": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #7",
+    "challenge_id": "7",
+    "path": "intercode_ctf/misc/7"
+  },
+  "ic-misc-9": {
+    "benchmark": "intercode_ctf",
+    "category": "misc",
+    "challenge": "Challenge #9",
+    "challenge_id": "9",
+    "path": "intercode_ctf/misc/9"
+  },
+  "ic-pwn-62": {
+    "benchmark": "intercode_ctf",
+    "category": "pwn",
+    "challenge": "Challenge #62",
+    "challenge_id": "62",
+    "path": "intercode_ctf/pwn/62"
+  },
+  "ic-pwn-91": {
+    "benchmark": "intercode_ctf",
+    "category": "pwn",
+    "challenge": "Challenge #91",
+    "challenge_id": "91",
+    "path": "intercode_ctf/pwn/91"
+  },
+  "ic-rev-0": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #0",
+    "challenge_id": "0",
+    "path": "intercode_ctf/rev/0"
+  },
+  "ic-rev-10": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #10",
+    "challenge_id": "10",
+    "path": "intercode_ctf/rev/10"
+  },
+  "ic-rev-13": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #13",
+    "challenge_id": "13",
+    "path": "intercode_ctf/rev/13"
+  },
+  "ic-rev-15": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #15",
+    "challenge_id": "15",
+    "path": "intercode_ctf/rev/15"
+  },
+  "ic-rev-43": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #43",
+    "challenge_id": "43",
+    "path": "intercode_ctf/rev/43"
+  },
+  "ic-rev-44": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #44",
+    "challenge_id": "44",
+    "path": "intercode_ctf/rev/44"
+  },
+  "ic-rev-45": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #45",
+    "challenge_id": "45",
+    "path": "intercode_ctf/rev/45"
+  },
+  "ic-rev-46": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #46",
+    "challenge_id": "46",
+    "path": "intercode_ctf/rev/46"
+  },
+  "ic-rev-47": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #47",
+    "challenge_id": "47",
+    "path": "intercode_ctf/rev/47"
+  },
+  "ic-rev-48": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #48",
+    "challenge_id": "48",
+    "path": "intercode_ctf/rev/48"
+  },
+  "ic-rev-49": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #49",
+    "challenge_id": "49",
+    "path": "intercode_ctf/rev/49"
+  },
+  "ic-rev-50": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #50",
+    "challenge_id": "50",
+    "path": "intercode_ctf/rev/50"
+  },
+  "ic-rev-51": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #51",
+    "challenge_id": "51",
+    "path": "intercode_ctf/rev/51"
+  },
+  "ic-rev-52": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #52",
+    "challenge_id": "52",
+    "path": "intercode_ctf/rev/52"
+  },
+  "ic-rev-53": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #53",
+    "challenge_id": "53",
+    "path": "intercode_ctf/rev/53"
+  },
+  "ic-rev-68": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #68",
+    "challenge_id": "68",
+    "path": "intercode_ctf/rev/68"
+  },
+  "ic-rev-75": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #75",
+    "challenge_id": "75",
+    "path": "intercode_ctf/rev/75"
+  },
+  "ic-rev-76": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #76",
+    "challenge_id": "76",
+    "path": "intercode_ctf/rev/76"
+  },
+  "ic-rev-77": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #77",
+    "challenge_id": "77",
+    "path": "intercode_ctf/rev/77"
+  },
+  "ic-rev-78": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #78",
+    "challenge_id": "78",
+    "path": "intercode_ctf/rev/78"
+  },
+  "ic-rev-81": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #81",
+    "challenge_id": "81",
+    "path": "intercode_ctf/rev/81"
+  },
+  "ic-rev-82": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #82",
+    "challenge_id": "82",
+    "path": "intercode_ctf/rev/82"
+  },
+  "ic-rev-83": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #83",
+    "challenge_id": "83",
+    "path": "intercode_ctf/rev/83"
+  },
+  "ic-rev-84": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #84",
+    "challenge_id": "84",
+    "path": "intercode_ctf/rev/84"
+  },
+  "ic-rev-85": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #85",
+    "challenge_id": "85",
+    "path": "intercode_ctf/rev/85"
+  },
+  "ic-rev-98": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #98",
+    "challenge_id": "98",
+    "path": "intercode_ctf/rev/98"
+  },
+  "ic-rev-99": {
+    "benchmark": "intercode_ctf",
+    "category": "rev",
+    "challenge": "Challenge #99",
+    "challenge_id": "99",
+    "path": "intercode_ctf/rev/99"
+  },
+  "ic-web-16": {
+    "benchmark": "intercode_ctf",
+    "category": "web",
+    "challenge": "Challenge #16",
+    "challenge_id": "16",
+    "path": "intercode_ctf/web/16"
+  },
+  "ic-web-54": {
+    "benchmark": "intercode_ctf",
+    "category": "web",
+    "challenge": "Challenge #54",
+    "challenge_id": "54",
+    "path": "intercode_ctf/web/54"
+  }
+}

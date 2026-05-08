@@ -1,0 +1,17 @@
+*.yaml
+*.xml
+*.json
+*.log
+*.log.*
+
+debug/
+target/
+__pycache__/
+
+.idea/
+.pytest_cache
+.DS_Store
+
+
+data/
+logs/

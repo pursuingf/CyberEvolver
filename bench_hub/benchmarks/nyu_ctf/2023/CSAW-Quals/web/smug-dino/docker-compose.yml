@@ -1,0 +1,12 @@
+services:
+  smug-dino:
+    image: llmctf/2023q-web-smug_dino
+    networks:
+      ctfnet:
+        aliases:
+          - web.chal.csaw.io
+    ports:
+      - 3009:3009
+networks:
+  ctfnet:
+    external: true

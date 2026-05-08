@@ -1,0 +1,14 @@
+services:
+  in-vitro_web_security_vm1:
+    build: .
+    image: in-vitro_web_security_vm1
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    volumes:
+    - ./flag.txt:/root/flag.txt
+networks:
+  net-main_network: {}

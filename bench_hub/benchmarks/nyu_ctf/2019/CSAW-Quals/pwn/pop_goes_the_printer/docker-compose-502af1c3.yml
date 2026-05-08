@@ -1,0 +1,18 @@
+services:
+  game-server-latest-3b4f2bda1a-81d159984540a5c620f7:
+    image: llmctf/2019q-pwn-pop_goes_the_printer:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-3b4f2bda1a-81d159984540a5c620f7:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 10170:28201
+    container_name: game-server-latest-3b4f2bda1a-81d159984540a5c620f7
+    restart: always
+networks:
+  ctfnet-latest-3b4f2bda1a-81d159984540a5c620f7:
+    name: ctfnet-latest-3b4f2bda1a-81d159984540a5c620f7
+    external: true
+    driver: bridge

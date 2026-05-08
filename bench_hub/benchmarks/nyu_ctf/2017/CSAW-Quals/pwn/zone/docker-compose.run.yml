@@ -1,0 +1,12 @@
+networks:
+  ctfnet:
+    external: true
+services:
+  zone:
+    image: llmctf/2017q-pwn-zone
+    networks:
+      ctfnet:
+        aliases:
+        - 2017q-pwn-zone
+    ports:
+    - 27437:8000

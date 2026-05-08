@@ -1,0 +1,46 @@
+# Core LLM clients & prompting
+langchain_openai>=0.2.0
+langchain_core>=0.3.0
+tenacity>=8.2.0
+Jinja2>=3.1.0
+tiktoken>=0.7.0
+
+# HTTP / network
+httpx[socks]>=0.27.0
+requests>=2.31.0
+sshtunnel>=0.4.0
+paramiko>=3.4.0
+
+# Benchmark server (FastAPI app + ASGI runner)
+fastapi>=0.110.0
+pydantic>=2.0
+uvicorn>=0.30.0
+
+# Docker SDK (used by agent runtime + bench_hub server)
+docker>=7.0.0
+
+# YAML / config / env loading
+PyYAML>=6.0
+python-dotenv==1.0.1
+
+# Process & filesystem helpers
+psutil>=5.9.0
+GitPython>=3.1.40
+pathspec>=0.12.0
+tqdm>=4.66.0
+
+# Code-patch utilities
+autopep8>=2.3.0
+
+# Binary analysis (used by mini_cyberagent disassemble + ELF parsing)
+capstone>=5.0.1
+pyelftools>=0.30
+
+# Console output / CLI / encoding helpers
+rich>=13.0.0
+typer>=0.12.0
+termcolor==2.4.0
+chardet==5.2.0
+
+# Embeddings (used by some baseline/runner paths)
+sentence-transformers>=2.7.0

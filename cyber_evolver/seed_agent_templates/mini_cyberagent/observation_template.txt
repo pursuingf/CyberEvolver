@@ -1,0 +1,10 @@
+<command_output>{% set max_len = 100000 %}{% set out = output or '' %}{% set orig_len = out|length %}{% if orig_len <= max_len %}
+{{ out }} {% else %} {{ out[:max_len] }}...<!-- Truncated: original length {{ orig_len }}, displayed first {{ max_len }} characters -->{% endif %}
+</command_output>
+
+<returncode>{{ returncode }}</returncode>
+{% if returncode == 124 %}
+<error>Command timed out (returncode=124). You may need to check the command script or parameters.</error>
+{% endif %}
+
+{{cwd}}$

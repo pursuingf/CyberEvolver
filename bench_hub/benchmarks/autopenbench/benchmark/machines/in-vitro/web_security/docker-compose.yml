@@ -1,0 +1,127 @@
+services:
+  in-vitro_web_security_vm0:
+    build: ./in-vitro/web_security/vm0
+    image: in-vitro_web_security_vm0
+    container_name: in-vitro_web_security_vm0
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    volumes:
+    - ./in-vitro/web_security/vm0/flag.txt:/root/flag.txt
+  in-vitro_web_security_vm1:
+    build: ./in-vitro/web_security/vm1
+    image: in-vitro_web_security_vm1
+    container_name: in-vitro_web_security_vm1
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    volumes:
+    - ./in-vitro/web_security/vm1/flag.txt:/root/flag.txt
+  in-vitro_web_security_vm2:
+    build: ./in-vitro/web_security/vm2
+    image: in-vitro_web_security_vm2
+    container_name: in-vitro_web_security_vm2
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    volumes:
+    - ./in-vitro/web_security/vm2/flag.txt:/root/flag.txt
+  in-vitro_web_security_vm3:
+    build: ./in-vitro/web_security/vm3
+    image: in-vitro_web_security_vm3
+    container_name: in-vitro_web_security_vm3
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+    depends_on:
+      in-vitro_web_security_vm3_database:
+        condition: service_healthy
+  in-vitro_web_security_vm3_database:
+    image: mysql:5.7
+    container_name: db_service_vm3
+    hostname: db_service_vm3
+    command: --innodb-use-native-aio=0
+    restart: always
+    networks:
+    - net-main_network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    healthcheck:
+      test:
+      - CMD
+      - mysqladmin
+      - ping
+      - -h
+      - localhost
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+    - ./in-vitro/web_security/vm3/init.sql:/docker-entrypoint-initdb.d/init.sql
+  in-vitro_web_security_vm4:
+    build: ./in-vitro/web_security/vm4
+    image: in-vitro_web_security_vm4
+    container_name: in-vitro_web_security_vm4
+    hostname: in-vitro_web_security_vm4
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    ports:
+    - 8080:80
+    restart: unless-stopped
+    volumes:
+    - ./in-vitro/web_security/vm4/flag.txt:/flag.txt
+    depends_on:
+    - in-vitro_web_security_vm4_database
+  in-vitro_web_security_vm4_database:
+    build: ./in-vitro/web_security/vm4_db
+    image: db_service_vm4
+    container_name: db_service_vm4
+    command: --default-authentication-plugin=mysql_native_password
+    tty: true
+    restart: unless-stopped
+    cap_add:
+    - SYS_NICE
+    networks:
+    - net-main_network
+  in-vitro_web_security_vm5:
+    build: ./in-vitro/web_security/vm5
+    image: in-vitro_web_security_vm5
+    container_name: in-vitro_web_security_vm5
+    hostname: in-vitro_web_security_vm5
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    volumes:
+    - ./in-vitro/web_security/vm5/flag.txt:/flag.txt
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+  in-vitro_web_security_vm6:
+    build: ./in-vitro/web_security/vm6
+    image: in-vitro_web_security_vm6
+    container_name: in-vitro_web_security_vm6
+    hostname: in-vitro_web_security_vm6
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    restart: unless-stopped
+    volumes:
+    - ./in-vitro/web_security/vm6/flag.txt:/flag.txt
+    command: bash -c " php -S 0.0.0.0:80 && tail -f /dev/null"
+networks:
+  net-main_network: {}

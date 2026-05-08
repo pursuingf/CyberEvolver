@@ -1,0 +1,75 @@
+# Ablation B — No Forensic Pipeline (simple-summary, no structured diagnosis)
+#
+# What this ablation removes vs. prompt_skill.yml:
+#   - system_prompt_eureka / user_prompt_eureka are OMITTED.
+#     => LogAnalyzer.propose_eureka_idea must be skipped at the orchestrator level
+#        when this YAML is in use (no structured weakness diagnosis is produced).
+#
+# What this ablation keeps:
+#   - LogAnalyzer.summarize_thought_obs is still called, but driven by a
+#     deliberately simple summarizer prompt (below) — no forensic depth, no
+#     example "perfect step", no <OBS:> placeholder strategy, no anti-mediocrity rules.
+#     We just want a plain step-by-step THOUGHT/OBSERVATION timeline.
+#   - The 4-phase refiner mutation is unchanged (mandates copied verbatim).
+#   - The base user_prompt_coderefiner still consumes p_summaries / gp_summaries.
+#     The summaries are simpler, but the refiner data flow is identical.
+#
+# Net: this isolates the contribution of the eureka diagnosis + forensic-depth
+# summary, while keeping a usable summary so context fits.
+
+system_prompt_thought_obs_summarizer: |
+  You summarize an autonomous offensive-security agent's run log into a plain step-by-step timeline.
+
+  Output format (one block per step):
+  ```
+  === STEP <N> ===
+  THOUGHT: <one or two sentences: what the agent intended and why>
+  OBSERVATION: <a few lines: the most relevant outcome — preserve concrete artifacts (addresses, status codes, version strings, error messages, flags, credentials) verbatim; otherwise paraphrase>
+  ```
+
+  Rules:
+  - First-person ("I") for THOUGHT.
+  - Keep each step short. No filler, no editorializing.
+  - Do not omit a step. Do not merge steps.
+  - Do not produce an `action` field.
+
+user_prompt_thought_obs_summarizer: |
+  Summarize the following raw log into the step-by-step format defined in the system prompt.
+
+  ## RAW LOG
+  {{raw_content}}
+
+  ## OUTPUT
+  Begin immediately with `=== STEP 1 ===` and continue through `=== STEP {{max_step}} ===`.
+
+system_prompt_thought_obs_summarizer_chunk: |
+  You summarize a *segment* of an autonomous offensive-security agent's run log into a plain step-by-step timeline.
+
+  You are processing steps {{start_step}} to {{end_step}} out of {{total_steps}} total steps. Summarize ONLY this segment.
+
+  Output format (one block per step):
+  ```
+  === STEP <N> ===
+  THOUGHT: <one or two sentences: what the agent intended and why>
+  OBSERVATION: <a few lines: the most relevant outcome — preserve concrete artifacts (addresses, status codes, version strings, error messages, flags, credentials) verbatim; otherwise paraphrase>
+  ```
+
+  Rules:
+  - First-person ("I") for THOUGHT.
+  - Keep each step short. No filler.
+  - Do not summarize steps outside the {{start_step}}-{{end_step}} range.
+  - Do not merge steps.
+
+user_prompt_thought_obs_summarizer_chunk: |
+  Summarize the segment below using the format defined in the system prompt.
+
+  ## CONTEXT
+  - Total steps in full log: {{total_steps}}
+  - Current segment: steps {{start_step}} to {{end_step}}
+  - Previous context (for continuity only, do NOT re-summarize): {{previous_context}}
+
+  ## RAW LOG SEGMENT
+  {{raw_content}}
+
+  ## OUTPUT
+  Begin with `=== STEP {{start_step}} ===` and continue sequentially through `=== STEP {{end_step}} ===`.

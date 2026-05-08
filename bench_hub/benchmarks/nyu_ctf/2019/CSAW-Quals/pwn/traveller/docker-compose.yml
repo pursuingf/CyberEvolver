@@ -1,0 +1,17 @@
+
+services:
+  game-server:
+    build: .
+    image: llmctf/2019q-pwn-traveller:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet:
+        aliases:
+          - pwn.chal.csaw.io
+    ports:
+      - "8000:8000"
+
+networks:
+  ctfnet:
+    external: true

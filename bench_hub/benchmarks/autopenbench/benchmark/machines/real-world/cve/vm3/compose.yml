@@ -1,0 +1,14 @@
+services:
+  real-world_cve_vm3:
+    build: .
+    image: real-world_cve_vm3
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    command: bash -c " service ssh start && tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+    - ./flag.txt:/root/flag.txt
+networks:
+  net-main_network: {}

@@ -1,0 +1,20 @@
+{%- if parse_result.command_blocks_num == 0 -%}
+No valid bash code block found. Please wrap your command in ```bash\n...\n```.
+{%- elif parse_result.command_blocks_num == 1 and parse_result.has_thought == False -%}
+You provided one bash code block, but no reasoning before it.
+{%- elif parse_result.command_blocks_num > 1 -%}
+{{ parse_result.command_blocks_num }} bash blocks detected.
+Please provide only one bash code block at a time. None bash code blocks will be executed.
+{%- else -%}
+Unexpected parsing issue. Ensure your action is in ```bash\n...\n``` format.
+{%- endif -%}
+
+Please follow the below format.
+
+<format_example>
+Your reasoning and analysis here. Explain why you want to perform the command.
+
+```bash
+your_command_here
+```
+</format_example>

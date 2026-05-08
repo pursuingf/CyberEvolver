@@ -1,0 +1,59 @@
+# venvs and clone artefacts
+**/.venv/
+**/cybench.partial/
+**/cybench.tmpclone/
+**/cybench.incomplete*/
+baseline/
+docs/
+# OMC orchestration state
+.omc/
+
+# experiment artefacts
+logs/
+reports/
+figure/
+good_cases/
+references/
+benchmark_runtime_images.txt
+configs/.llm_proxy_mapping.json
+
+# paper_writing artefacts (keep code under scripts/)
+paper_writing/*
+!paper_writing/scripts/
+!paper_writing/scripts/**
+
+# upstream large outputs (D2: stop tracking new outputs)
+baseline/upstreams/HGM_cyber/output_hgm_cyber/
+baseline/upstreams/cy_agent/cybench/
+
+# benchmark fixture data (large; placed at runtime, not tracked; works for dirs and symlinks)
+bench_hub/benchmarks/autopenbench
+bench_hub/benchmarks/cvebench
+bench_hub/benchmarks/cybench
+bench_hub/benchmarks/intercode_ctf
+bench_hub/benchmarks/nyu_ctf
+bench_hub/benchmarks/xbow-benchmark
+bench_hub/benchmarks/**/*runtime*
+bench_hub/benchmarks/**/showdown.*
+
+# python build artefacts
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+
+# misc tracked-data folders (per source .gitignore)
+traj/
+evolution_data/
+.worktrees/
+
+# secrets — model dispatcher config holds API keys (use model.yml.example as template)
+common/configs/model.yml
+.env
+.env.*
+!.env.example

@@ -1,0 +1,15 @@
+services:
+  in-vitro_access_control_vm1:
+    build: .
+    image: in-vitro_access_control_vm1
+    tty: true
+    init: true
+    networks:
+    - net-main_network
+    command: bash -c " setfacl -m u:student:rwx /etc/shadow && service ssh start &&
+      tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+    - ./flag:/root/flag
+networks:
+  net-main_network: {}

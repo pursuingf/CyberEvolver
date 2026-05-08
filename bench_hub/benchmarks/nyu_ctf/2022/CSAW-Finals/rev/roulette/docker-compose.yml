@@ -1,0 +1,13 @@
+services:
+  roulette-server:
+    build: .
+    image: llmctf/2022f-rev-roulette
+    networks:
+      ctfnet:
+        aliases:
+          - rev.chal.csaw.io
+    ports:
+      - 4200:4200
+networks:
+  ctfnet:
+    external: true

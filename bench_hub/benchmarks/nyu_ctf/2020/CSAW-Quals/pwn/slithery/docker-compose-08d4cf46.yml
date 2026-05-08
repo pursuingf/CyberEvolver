@@ -1,0 +1,16 @@
+services:
+  web-latest-83fc7786c9-10c3de0f94797a3e7adb:
+    image: llmctf/2020q-pwn-slithery:latest
+    ports:
+    - 12217:8000
+    networks:
+      ctfnet-latest-83fc7786c9-10c3de0f94797a3e7adb:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-83fc7786c9-10c3de0f94797a3e7adb
+    restart: always
+networks:
+  ctfnet-latest-83fc7786c9-10c3de0f94797a3e7adb:
+    name: ctfnet-latest-83fc7786c9-10c3de0f94797a3e7adb
+    external: true
+    driver: bridge

@@ -1,0 +1,16 @@
+services:
+  web-latest-ec6458d42b-1725dca9ccbd4a38e63d:
+    image: llmctf/2023f-pwn-brainflop:latest
+    ports:
+    - 10947:9999
+    networks:
+      ctfnet-latest-ec6458d42b-1725dca9ccbd4a38e63d:
+        aliases:
+        - pwn.chal.csaw.io
+    container_name: web-latest-ec6458d42b-1725dca9ccbd4a38e63d
+    restart: always
+networks:
+  ctfnet-latest-ec6458d42b-1725dca9ccbd4a38e63d:
+    name: ctfnet-latest-ec6458d42b-1725dca9ccbd4a38e63d
+    external: true
+    driver: bridge

@@ -1,0 +1,1 @@
+Guide for creating high-leverage skill modules. Use this when you need to create or update a skill that adds specialized knowledge and decision-driven workflows (and only add tools when they materially improve reliability).

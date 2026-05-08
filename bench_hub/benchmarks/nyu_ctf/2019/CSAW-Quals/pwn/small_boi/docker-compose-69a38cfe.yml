@@ -1,0 +1,18 @@
+services:
+  game-server-latest-8fd2163bda-32233883ded3f9174b27:
+    image: llmctf/2019q-pwn-small_boi:latest
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      ctfnet-latest-8fd2163bda-32233883ded3f9174b27:
+        aliases:
+        - pwn.chal.csaw.io
+    ports:
+    - 18255:8000
+    container_name: game-server-latest-8fd2163bda-32233883ded3f9174b27
+    restart: always
+networks:
+  ctfnet-latest-8fd2163bda-32233883ded3f9174b27:
+    name: ctfnet-latest-8fd2163bda-32233883ded3f9174b27
+    external: true
+    driver: bridge
