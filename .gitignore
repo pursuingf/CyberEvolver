@@ -4,7 +4,7 @@
 **/cybench.tmpclone/
 **/cybench.incomplete*/
 baseline/
-docs/
+
 # OMC orchestration state
 .omc/
 
