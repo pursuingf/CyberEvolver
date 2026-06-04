@@ -168,37 +168,6 @@ CyberEvolver/
 └── docs/                   # project homepage, paper PDF, and figures
 ```
 
-## Project Homepage
-
-The homepage is deployed with GitHub Pages at [https://pursuingf.github.io/CyberEvolver/](https://pursuingf.github.io/CyberEvolver/). The source lives in [`docs/index.html`](docs/index.html). It includes:
-
-- the paper abstract and author block;
-- the four-layer method overview;
-- result tables and benchmark figures;
-- case study details;
-- BibTeX and PDF links.
-
-For GitHub Pages, this repository should serve from the `docs/` directory on the `main` branch.
-
-## Verification
-
-These checks validate entry points without requiring a live LLM provider or benchmark fixture data:
-
-```bash
-PYTHONPATH=. python -m py_compile \
-  run_evolve_batch.py \
-  run_single_debug.py \
-  run_batch.py \
-  common/agent_runtime/challenge_client.py \
-  bench_hub/server/challenge_server.py
-
-bash -n \
-  cyber_evolver/scripts/run_evolve.bash \
-  bench_hub/scripts/run_autopenbench.bash \
-  bench_hub/scripts/run_cvebench.bash \
-  bench_hub/scripts/run_nyuctfbench.bash
-```
-
 ## Citation
 
 ```bibtex
