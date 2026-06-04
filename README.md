@@ -12,9 +12,9 @@
 
 <p align="center">
   <a href="docs/CyberEvolver.pdf"><img src="https://img.shields.io/badge/Paper-PDF-B31B1B.svg" alt="Paper PDF"></a>
-  <a href="docs/index.html"><img src="https://img.shields.io/badge/Project-Page-2F4F8F.svg" alt="Project page"></a>
+  <a href="https://pursuingf.github.io/CyberEvolver/"><img src="https://img.shields.io/badge/Project-Page-2F4F8F.svg" alt="Project page"></a>
   <a href="https://github.com/pursuingf/CyberEvolver"><img src="https://img.shields.io/badge/GitHub-Code-181717.svg?logo=github" alt="GitHub code"></a>
-  <img src="https://img.shields.io/badge/arXiv-coming_soon-888888.svg" alt="arXiv coming soon">
+  <a href="https://arxiv.org/abs/2605.26195"><img src="https://img.shields.io/badge/arXiv-2605.26195-B31B1B.svg?logo=arxiv" alt="arXiv 2605.26195"></a>
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white" alt="Python 3.10+">
 </p>
 
@@ -23,7 +23,8 @@
 ## News
 
 - **[2026.06.04]** README and project homepage were aligned with the CyberEvolver paper.
-- **[2026.06.04]** Project page is available under [`docs/`](docs/index.html) with the paper PDF and result figures.
+- **[2026.06.04]** Project page is available on [GitHub Pages](https://pursuingf.github.io/CyberEvolver/) with the paper PDF and result figures.
+- **[2026.05.25]** Paper posted to arXiv: [2605.26195](https://arxiv.org/abs/2605.26195).
 
 ## Why CyberEvolver?
 
@@ -65,7 +66,7 @@ Across all settings, CyberEvolver:
 - beats the strongest human-designed cyber agent in every model x benchmark cell by **14.0%** on average;
 - outperforms generic self-improvement baselines adapted from other domains.
 
-See the [project homepage](docs/index.html) for the visual breakdown and case study.
+See the [project homepage](https://pursuingf.github.io/CyberEvolver/) for the visual breakdown and case study.
 
 ## Table of Contents
 
@@ -169,7 +170,7 @@ CyberEvolver/
 
 ## Project Homepage
 
-The homepage lives in [`docs/index.html`](docs/index.html). It includes:
+The homepage is deployed with GitHub Pages at [https://pursuingf.github.io/CyberEvolver/](https://pursuingf.github.io/CyberEvolver/). The source lives in [`docs/index.html`](docs/index.html). It includes:
 
 - the paper abstract and author block;
 - the four-layer method overview;
@@ -177,7 +178,7 @@ The homepage lives in [`docs/index.html`](docs/index.html). It includes:
 - case study details;
 - BibTeX and PDF links.
 
-For GitHub Pages, serve the repository from the `docs/` directory on the `main` branch.
+For GitHub Pages, this repository should serve from the `docs/` directory on the `main` branch.
 
 ## Verification
 
@@ -205,7 +206,11 @@ bash -n \
   title  = {CyberEvolver: Structured Self-Evolution for Cybersecurity Agents On the Fly},
   author = {Fan, Yihe and Li, Changyi and Xu, Lichen and Pan, Xudong and Dai, Jiarun and Geng, Hong and Yang, Min},
   year   = {2026},
-  note   = {Preprint; arXiv ID to be assigned.}
+  eprint = {2605.26195},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  doi    = {10.48550/arXiv.2605.26195},
+  url    = {https://arxiv.org/abs/2605.26195}
 }
 ```
 
