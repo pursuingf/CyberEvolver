@@ -11,20 +11,13 @@
 </p>
 
 <p align="center">
-  <a href="docs/CyberEvolver.pdf"><img src="https://img.shields.io/badge/Paper-PDF-B31B1B.svg" alt="Paper PDF"></a>
-  <a href="https://pursuingf.github.io/CyberEvolver/"><img src="https://img.shields.io/badge/Project-Page-2F4F8F.svg" alt="Project page"></a>
-  <a href="https://github.com/pursuingf/CyberEvolver"><img src="https://img.shields.io/badge/GitHub-Code-181717.svg?logo=github" alt="GitHub code"></a>
-  <a href="https://arxiv.org/abs/2605.26195"><img src="https://img.shields.io/badge/arXiv-2605.26195-B31B1B.svg?logo=arxiv" alt="arXiv 2605.26195"></a>
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB.svg?logo=python&logoColor=white" alt="Python 3.10+">
 </p>
 
 ---
 
-## News
-
-- **[2026.06.04]** README and project homepage were aligned with the CyberEvolver paper.
-- **[2026.06.04]** Project page is available on [GitHub Pages](https://pursuingf.github.io/CyberEvolver/) with the paper PDF and result figures.
-- **[2026.05.25]** Paper posted to arXiv: [2605.26195](https://arxiv.org/abs/2605.26195).
+> This repository is an anonymized code release accompanying a paper currently under
+> double-blind review. Author, affiliation, and paper links are intentionally omitted.
 
 ## Why CyberEvolver?
 
@@ -66,7 +59,7 @@ Across all settings, CyberEvolver:
 - beats the strongest human-designed cyber agent in every model x benchmark cell by **14.0%** on average;
 - outperforms generic self-improvement baselines adapted from other domains.
 
-See the [project homepage](https://pursuingf.github.io/CyberEvolver/) for the visual breakdown and case study.
+Result figures are under `docs/static/images/`.
 
 ## Table of Contents
 
@@ -75,8 +68,6 @@ See the [project homepage](https://pursuingf.github.io/CyberEvolver/) for the vi
 - [Run CyberEvolver](#run-cyberevolver)
 - [Benchmark Control Plane](#benchmark-control-plane)
 - [Repository Layout](#repository-layout)
-- [Project Homepage](#project-homepage)
-- [Citation](#citation)
 
 ## Setup
 
@@ -88,8 +79,9 @@ See the [project homepage](https://pursuingf.github.io/CyberEvolver/) for the vi
 
 ### Installation
 
+Download or clone this anonymized repository, then:
+
 ```bash
-git clone git@github.com:pursuingf/CyberEvolver.git
 cd CyberEvolver
 pip install -r requirements.txt
 ```
@@ -151,7 +143,7 @@ python run_evolve_batch.py \
 
 `bench_hub/` materializes benchmark targets on demand and isolates agent runs from one another. It supports per-agent target instances for benchmarks that require independent Docker Compose projects, while sharing runtimes when safe.
 
-Large benchmark fixture trees are not intended to be edited as part of README/homepage work. Before full evaluation, place the required benchmark fixtures under `bench_hub/benchmarks/` according to the benchmark adapter you run.
+Large benchmark fixture trees are not intended to be edited as part of README work. Before full evaluation, place the required benchmark fixtures under `bench_hub/benchmarks/` according to the benchmark adapter you run.
 
 ## Repository Layout
 
@@ -165,23 +157,12 @@ CyberEvolver/
 ├── run_evolve_batch.py     # main CyberEvolver entry point
 ├── run_batch.py            # fixed-scaffold batch baseline
 ├── run_single_debug.py     # single-target debug runner
-└── docs/                   # project homepage, paper PDF, and figures
+└── docs/                   # result figures referenced by this README
 ```
 
 ## Citation
 
-```bibtex
-@misc{fan2026cyberevolver,
-  title  = {CyberEvolver: Structured Self-Evolution for Cybersecurity Agents On the Fly},
-  author = {Fan, Yihe and Li, Changyi and Xu, Lichen and Pan, Xudong and Dai, Jiarun and Geng, Hong and Yang, Min},
-  year   = {2026},
-  eprint = {2605.26195},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CR},
-  doi    = {10.48550/arXiv.2605.26195},
-  url    = {https://arxiv.org/abs/2605.26195}
-}
-```
+Citation information is withheld while the paper is under double-blind review.
 
 ## Acknowledgements
 
